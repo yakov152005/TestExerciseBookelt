@@ -725,13 +725,111 @@ public class Main{
 		}
 	}
 	//------------------------------------------------------------------------------
-
-
-
-
+	public static void func29B(){
+		int[] array = {1,1,1,2,2,2,5,5,5,4,4,4};
+		boolean answer = check3Row(array);
+		System.out.println(answer);
+	}
+	public static boolean check3Row(int[] array){
+		boolean found = false;
+		for (int i = 0; i < array.length ; i+=3) {
+			if (array[i] == array[i+1] && array[i+1] == array[i+2]){
+				found = true;
+			}else {
+				found = false;
+				break;
+			}
+		}
+		return found;
+	}
+	//------------------------------------------------------------------------------
+	public static void func20(){
+		int number = 2468;
+		int digit = 3;
+		int result = sumOfDigit(number,digit);
+		System.out.println(result);
+	}
+	public static int sumOfDigit(int number, int digit){
+		int sum = 0;
+		while (digit > 0){
+			sum += number%10;
+			digit--;
+			number /= 10;
+		}
+		return sum;
+	}
+	//------------------------------------------------------------------------------
+	public static void func19A(){
+		int number = 4545;//18
+		int sum = sumOfDigitNumber(number);
+		System.out.println(sum);
+	}
+	public static int sumOfDigitNumber(int number){
+		int sum = 0;
+		while (number>0){
+			sum += number%10;
+			number /=10;
+		}
+		return sum;
+	}
+	public static void func19B(){
+		boolean res = true;
+		while (res){
+			System.out.println("Enter a two number: ");
+			int num1 = s.nextInt();
+			int num2 = s.nextInt();
+			if (num1 == 0 && num2 == 0){
+				System.out.println("(0,0) Bye");
+				res = false;
+			}else {
+				int sum1 = sumOfDigitNumber(num1);
+				int sum2 = sumOfDigitNumber(num2);
+				if (sum1 == sum2){
+					System.out.println(num1 +" " + num2 + " They are twin numbers");
+				}else {
+					System.out.println(num1 +" " + num2 + " NOT twin numbers");
+				}
+			}
+		}
+	}
+	//------------------------------------------------------------------------------
+	public static void func18(){
+		int number = 2754;
+		int lengthNumber = lengthOfNumber(number);
+		printNumberWithSpecialMethod(number,lengthNumber);
+	}
+	public static int lengthOfNumber(int number){
+		int counter = 0;
+		int sum = 0;
+		while (number > 0){
+			sum += number % 10;
+			counter++;
+			number /= 10;
+		}
+		return counter;
+	}
+	public static void printNumberWithSpecialMethod(int number, int lengthNumber){
+		String res = "";
+		while (lengthNumber > 0){
+			int temp = number % 10;
+			if (temp <=5){
+				res += temp;
+			}else {
+				for (int i = 0; i < temp; i++) {
+					res += temp;
+				}
+			}
+			number /= 10;
+			lengthNumber--;
+		}
+		for (int i = res.length()-1 ; i >= 0; i--) {
+			System.out.print(res.charAt(i));
+		}
+	}
+	//------------------------------------------------------------------------------
 
 	public static void main(String[] args) {
-
+		//Enter your chooce for Example -- > func17();
 	}
 	public static Scanner s = new Scanner(System.in);
 }
