@@ -1,7 +1,4 @@
-import java.awt.*;
-import java.util.IllegalFormatCodePointException;
 import java.util.Scanner;
-
 public class Main{
 
 	//------------------------------------------------------------------------------
