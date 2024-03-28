@@ -697,20 +697,25 @@ public class Main{
 		System.out.println(temp +" % "+ num2 +" = " + num1);
 	}
 	public static void power(){
-		int num1 = getInput();
-		int num2 = getInput();
-		int pow = num1;
-		int sum = 0;
-		for (int i = 0; i < (num2 -1); i++) {
-			for (int j = 0; j < num1; j++) {
-				sum += pow;
+		int base = getInput();
+		int power = getInput();
+		int result =pow(base,power);
+		System.out.println(base+"^"+power+"="+result);
+	}
+	public static int pow(int base, int power) {
+		if (power == 0) {
+			return 1;
+		}
+
+		int result = base;
+		for (int i = 1; i < power; i++) {
+			int temp = 0;
+			for (int j = 0; j < base; j++) {
+				temp += result;
 			}
+			result = temp;
 		}
-		pow = sum;
-		if (num2 == 0){
-			pow =1 ;
-		}
-		System.out.println(num1 +"^"+ num2+ "=" + pow);
+		returen result
 	}
 	//------------------------------------------------------------------------------
 	public static void func17(){
